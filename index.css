@@ -1,6 +1,32 @@
-/* ---------------- */
-/* Reset            */
-/* ---------------- */
+/* ------------------- */
+/* Custom properties   */
+/* ------------------- */
+
+:root {
+  /* colors */
+  --clr-dark-cyan: 179 81% 29%;
+  --clr-dark-grey-blue: 215 19% 25%;
+  --clr-pale: 25 94% 86%;
+  --clr-light-cream: 43 78% 98%;
+  --clr-grey: 215 5% 54%;
+
+  /* font-sizes */
+  --fs-100: .75rem;
+  --fs-200: 1rem;
+  --fs-300: 1.5rem;
+  --fs-400: 2rem;
+  --fs-500: 2.5rem;
+  --fs-600: 4.5rem;
+  --fs-700: 9.374rem;
+
+  /* font-families */
+  --ff-sans-1: "Fraunces", sans-serif;
+  --ff-sans-2: "Barlow", sans-serif;
+}
+
+/* ------------------- */
+/* Reset               */
+/* ------------------- */
 
 /* https://piccalil.li/blog/a-modern-css-reset */
 
@@ -77,4 +103,118 @@ select {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* ------------------- */
+/* Utility             */
+/* ------------------- */
+
+/* general */
+
+.flex {
+  display: flex;
+  gap: var(--gap, 1rem);
+}
+
+.grid {
+  display: grid;
+  gap: var(--gap, 1rem);
+}
+
+.sr-only {
+  position: absolute; 
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px; 
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; /* added line */
+  border: 0;
+}
+
+/* colors */
+
+.bg-dark-cyan { background-color: hsl( var(--clr-dark-cyan) );}
+.bg-dark-grey { background-color: hsl( var(--clr-dark-grey-blue) );}
+.bg-pale { background-color: hsl( var(--clr-pale) );}
+.bg-light { background-color: hsl( var(--clr-light-cream) );}
+.bg-grey { background-color: hsl( var(--clr-grey) );}
+
+.text-dark-cyan { background-color: hsl( var(--clr-dark-cyan) );}
+.text-dark-grey { background-color: hsl( var(--clr-dark-grey-blue) );}
+.text-pale { background-color: hsl( var(--clr-pale) );}
+.text-light { background-color: hsl( var(--clr-light-cream) );}
+.text-grey { background-color: hsl( var(--clr-grey) );}
+
+/* typhography */
+
+.ff-sans-1 { font-family: var(--ff-sans-1)}
+.ff-sans-2 { font-family: var(--ff-sans-2)}
+
+.fs-100 {
+  font-size: var(--fs-100);
+  line-height: .9375                           ;
+}
+
+.fs-200 {
+  font-size: var(--fs-200);
+  line-height: 1.625;
+}
+
+.fs-300 {
+  font-size: var(--fs-300);
+  line-height: 2;
+}
+
+.fs-400 {
+  font-size: var(--fs-400);
+  line-height: 2.25;
+}
+
+.fs-500 {
+  font-size: var(--fs-500);
+  line-height: 3;
+}
+
+.fs-600 {
+  font-size: var(--fs-600);
+  line-height: 4.5;
+}
+
+.fs-700 {
+  font-size: var(--fs-700);
+  line-height: 4.5;
+  text-transform: lowercase;
+}      
+
+/* ------------------- */
+/* Components          */
+/* ------------------- */
+
+.btn {
+  padding: 1rem;
+  border-radius: 6px;
+  color: hsl(var(--clr-light-cream) );
+}
+
+.btn:hover {
+  background-color: hsl( var(--clr-dark-cyan) );
+  cursor: pointer;
+}
+
+.opt {
+  padding: 2rem;
+  border-radius: 6px;
+  color: hsl( var(--clr-dark-grey-blue) );
+}
+
+.opt:hover {
+  background-color: hsl( var(--pale) );
+  cursor: pointer;
+}
+
+.opt:active {
+  background-color: hsl( var(--clr-dark-grey-blue) );
+  color: hsl( var(--clr-light-cream) );
 }
