@@ -11,72 +11,131 @@
   <link href="https://fonts.googleapis.com/css2?family=Barlow&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="index.css">
+  <script src="index.js" defer></script>
   
   <title>Frontend Mentor | Coffeeroasters subscription site</title>
 </head>
 <body>
-  Home
-  About us
-  Create your plan
+  <header class="primary-header flex">
+    <a href="index.html" class="logo"><img src="assets/shared/desktop/logo.svg" alt="Coffee Rosaters"></a>
 
-  Great coffee made simple.
+    <button class="mobile-nav-toggle" aria-controls="primary-nav">
+      <span class="sr-only" aria-expanded="false">Menu</span>
+    </button>
 
-  Start your mornings with the world’s best coffees. Try our expertly curated artisan 
-  coffees from our best roasters delivered directly to your door, at your schedule.
+    <nav class="primary-nav" id="primary-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="plan.html">Create Your Plan</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  Create your plan
+  <main>
+    <!-- banner -->
+    <section class="banner text-light grid">
+      <h1 class="fs-400">Great coffee made simple.</h1>
+      <p class="ff-sans-2 ff-100">Start your mornings with the world’s best coffees. Try our expertly curated artisan coffees from our best roasters delivered directly to your door, at your schedule.</p>
+      <a href="plan.html" class="btn">Create your plan</a>
+    </section>
 
-  Our collection
+    <!-- coffee collectiond -->
+    <section class="collections">
+      <div class="item">
+        <img src="assets/home/desktop/image-gran-espresso.png" alt="Gran Expresso">
 
-  Gran Espresso
-  Light and flavorful blend with cocoa and black pepper for an intense experience
+        <div class="content text-dark-grey">
+          <h2 class="fs-200">Gran Espresso</h2>
+          <p class="fs-100">Light and flavorful blend with cocoa and black pepper for an intense experience</p>
+        </div>
+      </div>
 
-  Planalto
-  Brazilian dark roast with rich and velvety body, and hints of fruits and nuts
+      <div class="item">
+        <img src="assets/home/desktop/image-planalto.png" alt="Planalto">
 
-  Piccollo
-  Mild and smooth blend featuring notes of toasted almond and dried cherry
+        <div class="content text-dark-grey">
+          <h2 class="fs-200">Planalto</h2>
+          <p class="fs-100">Brazilian dark roast with rich and velvety body, and hints of fruits and nuts</p>
+        </div>
+      </div>
 
-  Danche
-  Ethiopian hand-harvested blend densely packed with vibrant fruit notes
+      <div class="item">
+        <img src="assets/home/desktop/image-piccollo.png" alt="Piccollo">
 
-  Why choose us?
+        <div class="content text-dark-grey">
+          <h2 class="fs-200">Piccollo</h2>
+          <p class="fs-100">Mild and smooth blend featuring notes of toasted almond and dried cherry</p>
+        </div>
+      </div>
 
-  A large part of our role is choosing which particular coffees will be featured 
-  in our range. This means working closely with the best coffee growers to give 
-  you a more impactful experience on every level.
+      <div class="item">
+        <img src="assets/home/desktop/image-danche.png" alt="Danche">
 
-  Best quality
-  Discover an endless variety of the world’s best artisan coffee from each of our roasters.
+        <div class="content text-dark-grey">
+          <h2 class="fs-200">Danche</h2>
+          <p class="fs-100">Ethiopian hand-harvested blend densely packed with vibrant fruit notes
+          </p>
+        </div>
+      </div>
+    </section>
 
-  Exclusive benefits
-  Special offers and swag when you subscribe, including 30% off your first shipment.
+    <!-- why choose us -->
+    <section class="bg-dark-grey text-light">
+      <h1> Why choose us?</h1>
+      <p class="fs-100">A large part of our role is choosing which particular coffees will be featured in our range. This means working closely with the best coffee growers to give you a more impactful experience on every level.</p>
 
-  Free shipping 
-  We cover the cost and coffee is delivered fast. Peak freshness: guaranteed.
+      <div class="item">
+        <img src="assets/home/desktop/icon-coffee-bean.svg" alt="">
 
-  How it works
+        <div class="content">
+          <h2 class="fs-200">Best quality</h2>
+          <p class="fs-100">Discover an endless variety of the world’s best artisan coffee from each of our roasters.</p>
+        </div>
+      </div>
 
-  01
-  Pick your coffee
-  Select from our evolving range of artisan coffees. Our beans are ethically 
-  sourced and we pay fair prices for them. There are new coffees in all profiles 
-  every month for you to try out.
+      <div class="item">
+        <img src="assets/home/desktop/icon-gift.svg" alt="">
 
-  02
-  Choose the frequency
-  Customize your order frequency, quantity, even your roast style and grind type. 
-  Pause, skip or cancel your subscription with no commitment through our online portal.
+        <div class="content">
+          <h2 class="fs-200">Exclusive benefits</h2>
+          <p class="fs-100">Special offers and swag when you subscribe, including 30% off your first shipment.</p>
+        </div>
+      </div>
 
-  03
-  Receive and enjoy!
-  We ship your package within 48 hours, freshly roasted. Sit back and enjoy award-winning 
-  world-class coffees curated to provide a distinct tasting experience.
+      <div class="item">
+        <img src="assets/home/desktop/icon-truck.svg" alt="">
 
-  Create your plan
+        <div class="content">
+          <h2 class="fs-200">Free shipping</h2>
+          <p class="fs-100">We cover the cost and coffee is delivered fast. Peak freshness: guaranteed.</p>
+        </div>
+      </div>
+    </section>
 
-  Home
-  About us
-  Create your plan
+    <!-- how it works -->
+    <section>
+      <h1 class="fs-200 text-grey">How it works</h1>
+
+      <ol>
+        <li class="text-dark-grey">
+          <h2 class="fs-200">Pick your coffee</h2>
+          <p class="fs-100">Select from our evolving range of artisan coffees. Our beans are ethically sourced and we pay fair prices for them. There are new coffees in all profiles every month for you to try out.</p>
+        </li>
+        <li class="text-dark-grey">
+          <h2 class="fs-200">Choose the frequency</h2>
+          <p class="fs-100">Customize your order frequency, quantity, even your roast style and grind type. Pause, skip or cancel your subscription with no commitment through our online portal.</p>
+        </li>
+        <li class="text-dark-grey">
+          <h2 class="fs-200"> Receive and enjoy!</h2>
+          <p class="fs-100">We ship your package within 48 hours, freshly roasted. Sit back and enjoy award-winning world-class coffees curated to provide a distinct tasting experience.</p>
+        </li>
+      </ol>
+
+      <a href="plan.html" class="btn">Create your plan</a>
+    </section>
+  </main>
+
+  <footer class="bg-dark-grey"></footer>
 </body>
 </html>
