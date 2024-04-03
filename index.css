@@ -310,3 +310,27 @@ section {
 .banner .btn {
   place-self: center;
 }
+
+/* collections */
+
+.collections {
+  text-align: center;
+}
+
+.collections > *:not(:last-child) {
+  margin-bottom: 3rem;
+}
+
+.coffee img {
+  max-width: 60%;
+  position: relative;
+  transform: translate(40%);
+}
+
+.content h2 {
+  margin-bottom: 1rem;
+}
+
+.content p {
+  padding-inline: 4rem;
+}
