@@ -144,6 +144,10 @@ a {
   text-decoration: none;
 }
 
+.text-center {
+  text-align: center;
+}
+
 /* colors */
 
 .bg-dark-cyan { background-color: hsl( var(--clr-dark-cyan) );}
@@ -252,8 +256,8 @@ p, .ff-sans-2 { font-family: var(--ff-sans-2);}
     text-align: center;
 
     position: fixed;
-    inset: 3.5rem 1rem 0 1rem;
-    background: hsl(var(--clr-light-cream) / .5);
+    inset: 3.8rem 1rem 0 1rem;
+    background: hsl(var(--clr-light-cream) / .9);
     backdrop-filter: blur(.1rem);
     padding-top: 2rem;
   }
@@ -314,11 +318,7 @@ section {
 /* collections */
 
 .collections {
-  text-align: center;
-}
-
-.collections > *:not(:last-child) {
-  margin-bottom: 3rem;
+  --gap: 3rem;
 }
 
 .coffee img {
@@ -331,6 +331,86 @@ section {
   margin-bottom: 1rem;
 }
 
-.content p {
+.collections > .content p {
   padding-inline: 4rem;
+}
+
+/* .collections::before {
+  content: "our collection";
+  position: absolute;
+  inset: -5rem 0 0 0;
+  font-family: var(--ff-sans-1);
+  font-size: var(--fs-500);
+  font-weight: 700;
+  color: hsl(var(--clr-dark-grey-blue) / .7);
+  text-shadow: 0 7px hsl(var(--clr-dark-grey-blue) / .7);
+} */
+
+@media (min-width:35rem) {
+  .collections {
+    text-align: left;
+  }
+
+  .item {
+    display: flex;
+    align-items: center;
+  }
+
+  .collections > .content p {
+    padding-inline: 0 3rem;
+  }
+}
+
+@media (min-width:50rem) {
+  .collections {
+    text-align: center;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .item {
+    display: block;
+  }
+
+  .collections > .content p {
+    padding-inline: 0;
+  }
+  
+  /* .wrapper {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  } */
+}
+
+/* why choose us */
+
+.why-us {
+  padding: 4rem 1rem 36rem;
+  border-radius: 6px;
+  position: relative;
+  display: grid;
+}
+
+.why-us h1 {
+  margin-bottom: 1.5rem;
+}
+
+.img {
+  margin-bottom: 3.3rem;
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper {
+  margin-inline: 1.5rem;
+  position: absolute;
+  top: 33%;
+}
+
+.wrapper .item {
+  padding-top: 4rem;
+  padding-bottom: 2.8rem;
+  border-radius: 6px;
+}
+
+.wrapper p {
+  padding-inline: 3rem;
 }
