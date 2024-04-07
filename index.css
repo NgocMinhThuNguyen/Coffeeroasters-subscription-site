@@ -285,6 +285,7 @@ p, .ff-sans-2 { font-family: var(--ff-sans-2);}
 /* navigation */
 
 .primary-nav ul {
+  --gap: 2rem;
   list-style: none;
 }
 
@@ -349,17 +350,39 @@ section {
 
 .banner {
   --gap: 1.875rem; 
-
-  padding: 6.25rem 1.375rem;
-  border-radius: 6px;
-  background-image: url("assets/home/mobile/image-hero-coffeepress.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  text-align: center;
+  justify-items: center;
+  align-items: center;
 }
 
-.banner .btn {
-  place-self: center;
+.banner > * {
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+}
+
+.illustration img {
+  border-radius: 6px;
+}
+
+.banner-intro {
+  text-align: center;
+  padding-inline: 1.375rem;
+  flex-direction: column;
+}
+
+@media (min-width: 35rem) {
+  .banner-intro {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    text-align: left;
+    align-items: flex-start;
+    padding-inline-end: 10rem;
+  }
+}
+
+@media (min-width: 50rem) {
+  .banner-intro {
+    padding-inline-end: 30rem;
+  }
 }
 
 /* collections */
