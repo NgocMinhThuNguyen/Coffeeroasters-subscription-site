@@ -295,7 +295,6 @@ p, .ff-sans-2 { font-family: var(--ff-sans-2);}
 @media (max-width: 35rem) {
   .primary-nav {
     display: none;
-    text-align: center;
 
     position: fixed;
     inset: 3.8rem 1rem 0 1rem;
@@ -310,7 +309,9 @@ p, .ff-sans-2 { font-family: var(--ff-sans-2);}
 
   .primary-nav > ul {
     display: grid;
+    text-align: center;
     gap: 2rem;
+    padding-inline-start: 0;
   }
 
   .primary-nav a {
