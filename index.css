@@ -123,6 +123,10 @@ body {
   }
 }
 
+main {
+  width: 100%;
+}
+
 .flex {
   display: flex;
   gap: var(--gap, 1rem);
@@ -280,7 +284,7 @@ p, .ff-sans-2 { font-family: var(--ff-sans-2);}
 
 /* navigation */
 
-.primary-nav > ul {
+.primary-nav ul {
   list-style: none;
 }
 
@@ -288,7 +292,7 @@ p, .ff-sans-2 { font-family: var(--ff-sans-2);}
   font-family: var(--ff-sans-2);
   font-size: var(--fs-100);
   color: hsl(var(--clr-grey));
-  font-weight: bold;
+  font-weight: 600;
   text-transform: uppercase;
 }
 
