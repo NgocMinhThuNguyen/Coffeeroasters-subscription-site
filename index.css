@@ -267,6 +267,20 @@ p, .ff-sans-2 { font-family: var(--ff-sans-2);}
   color: hsl( var(--clr-light-cream) );
 }
 
+.nav {
+  --gap: 2rem;
+  list-style: none;
+  padding-inline-start: 0;
+}
+
+.nav a {
+  font-family: var(--ff-sans-2);
+  font-size: var(--fs-100);
+  color: hsl(var(--clr-grey));
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
 /* ------------------- */
 /* Layout              */
 /* ------------------- */
@@ -285,17 +299,8 @@ p, .ff-sans-2 { font-family: var(--ff-sans-2);}
 
 /* navigation */
 
-.primary-nav ul {
-  --gap: 2rem;
-  list-style: none;
-}
-
-.primary-nav a {
-  font-family: var(--ff-sans-2);
-  font-size: var(--fs-100);
-  color: hsl(var(--clr-grey));
-  font-weight: 600;
-  text-transform: uppercase;
+.primary-nav a:hover {
+  color:hsl( var(--clr-dark-grey-blue) );
 }
 
 @media (max-width: 35rem) {
@@ -317,7 +322,6 @@ p, .ff-sans-2 { font-family: var(--ff-sans-2);}
     display: grid;
     text-align: center;
     gap: 2rem;
-    padding-inline-start: 0;
   }
 
   .primary-nav a {
@@ -521,6 +525,7 @@ section {
   border-radius: 50%;
   background-color: hsl(var(--clr-light-cream) );
   border: 2px solid hsl( var(--clr-dark-cyan) );
+  display: none;
 }
 
 @media (min-width: 35rem) {
@@ -540,5 +545,67 @@ section {
     grid-template-rows: subgrid;
     grid-row: span 3;
     padding-top: 2.8rem;
+  }
+
+  .circle {
+    display: block;
+  }
+}
+
+/* footer */
+
+footer {
+  padding-block: 3.125rem;
+  justify-items: center;
+}
+
+.logo svg {
+  width: 100%;
+}
+
+.footer-logo {
+  fill: hsl(0 0 100%);
+}
+
+.footer-nav {
+  flex-direction: column;
+  text-align: center;
+}
+
+.footer-nav a:hover {
+  color: hsl( var(--clr-light-cream) );
+}
+
+.social-links {
+  --gap: 1.5rem;
+  list-style: none;
+  padding-inline-start: 0;
+  align-items: center;
+}
+
+.social-links a:hover .icon {
+  fill: hsl(var(--clr-pale));
+  cursor: pointer;
+}
+
+@media (min-width: 35rem) {
+  .footer-nav {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 50rem) {
+  footer {
+    padding-inline: 5rem;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+  }
+
+  .logo, .footer-nav {
+    justify-self: start;
+  }
+
+  .social-links {
+    justify-self: end;
   }
 }
