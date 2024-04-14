@@ -537,7 +537,6 @@ section {
     --gap: 2rem;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;
-    /* border-top: 2px solid hsl(var(--clr-pale) ); */
   }
 
   .numbered-items li:not(:last-child)::after {
