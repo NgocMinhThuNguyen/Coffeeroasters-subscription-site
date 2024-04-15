@@ -3,11 +3,16 @@
 /* commitment */
 
 .commitment {
+  --gap: 2.9rem;
   text-align: center;
 }
 
 .commitment img {
   border-radius: 6px;
+}
+
+.commitment-content h1 {
+  margin-block-end: 1.875rem;
 }
 
 @media (min-width: 35rem) {
@@ -17,7 +22,8 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .commitment .content {
+  .commitment-content {
+    justify-self: start;
     align-self: center;
   }
 }
