@@ -1,0 +1,23 @@
+@import url("index.css");
+
+/* commitment */
+
+.commitment {
+  text-align: center;
+}
+
+.commitment img {
+  border-radius: 6px;
+}
+
+@media (min-width: 35rem) {
+  .commitment {
+    --gap: 4rem;
+    text-align: left;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .commitment .content {
+    align-self: center;
+  }
+}

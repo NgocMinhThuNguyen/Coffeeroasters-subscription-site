@@ -364,8 +364,13 @@ section {
   grid-row: 1/-1;
 }
 
+.illustration {
+  width: 100%;
+}
+
 .illustration img {
   border-radius: 6px;
+  width: 100%;
 }
 
 .banner-intro {
