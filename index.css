@@ -234,6 +234,7 @@ p, .ff-sans-2, address { font-family: var(--ff-sans-2);}
 .fs-text { font-size: var(--fs-normal); }  
 .heading-primary { font-size: var(--fs-400);}
 .heading-secondary { font-size: var(--fs-200);}
+.heading-tertiary { font-size: var(--fs-200); }
 
 @media (min-width: 35rem) {
   .heading-primary {
@@ -245,6 +246,7 @@ p, .ff-sans-2, address { font-family: var(--ff-sans-2);}
 @media (min-width: 50rem) {
   .heading-primary { font-size: var(--fs-700);} 
   .heading-secondary { font-size: var(--fs-400);}
+  .heading-tertiary { font-size: var(--fs-300); }
   .fs-text { font-size: var(--fs-100); }     
 }
 
@@ -311,7 +313,7 @@ p, .ff-sans-2, address { font-family: var(--ff-sans-2);}
   padding-inline-start: 0;
   margin-bottom: 5rem;
   counter-reset: count;
-} 
+}
 
 @media (min-width: 35rem) {
   .col-3 {
@@ -328,6 +330,38 @@ p, .ff-sans-2, address { font-family: var(--ff-sans-2);}
     grid-template-rows: subgrid;
     grid-row: span 3;
     padding-top: 2.8rem;
+  }
+}
+
+.banner {
+  --gap: 1.875rem; 
+  text-align: center;
+  justify-items: center;
+  align-items: center;
+  padding: 6.25rem 1.375rem;
+  
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 6px;
+}
+
+@media (min-width: 35rem) {
+  .banner {
+    text-align: left;
+    justify-items: start;
+    grid-template-columns: 2fr 1fr;
+    
+  }
+
+  .banner > * {
+    grid-column: 1/2;
+  }
+}
+
+@media (min-width: 50rem) {
+  .banner {
+    padding-inline-start: 5.18rem;
   }
 }
 
@@ -403,47 +437,19 @@ section {
 
 /* banner */
 
-.banner {
-  --gap: 1.875rem; 
-  justify-items: center;
-  align-items: center;
-}
-
-.banner > * {
-  grid-column: 1/-1;
-  grid-row: 1/-1;
-}
-
-.illustration {
-  width: 100%;
-}
-
-.illustration img {
-  border-radius: 6px;
-  width: 100%;
-}
-
-.banner-intro {
-  text-align: center;
-  padding-inline: 1.375rem;
-  flex-direction: column;
+.intro-wrapper {
+  background-image: url("assets/home/mobile/image-hero-coffeepress.jpg");
 }
 
 @media (min-width: 35rem) {
-  .banner-intro {
-    grid-column: 1/2;
-    grid-row: 1/2;
-    text-align: left;
-    align-items: flex-start;
-    gap: 2rem;
-    padding-inline-start: min(5rem, 10%);
-    padding-inline-end: min(10rem, 30%);
+  .intro-wrapper {
+    background-image: url("assets/home/tablet/image-hero-coffeepress.jpg");
   }
 }
 
 @media (min-width: 50rem) {
-  .banner-intro  p{
-    padding-inline-end: max(10rem, 50%);
+  .intro-wrapper {
+    background-image: url("assets/home/desktop/image-hero-coffeepress.jpg");
   }
 }
 

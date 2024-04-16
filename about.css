@@ -1,5 +1,23 @@
 @import url("index.css");
 
+/* banner */
+
+.about-wrapper {
+  background-image: url("assets/about/mobile/image-hero-whitecup.jpg");
+}
+
+@media (min-width: 35rem) {
+  .about-wrapper {
+    background-image: url("assets/about/tablet/image-hero-whitecup.jpg");
+  }
+}
+
+@media (min-width: 50rem) {
+  .about-wrapper {
+    background-image: url("assets/about/desktop/image-hero-whitecup.jpg");
+  }
+}
+
 /* commitment */
 
 .commitment {
