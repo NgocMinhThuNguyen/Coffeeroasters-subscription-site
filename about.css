@@ -92,3 +92,19 @@
     grid-column: 1/3
   }
 }
+
+/* headquarters */
+
+.headquarters address {
+  font-style: normal;
+}
+
+.country {
+  margin-inline: auto;
+}
+
+@media (min-width: 35rem) {
+  .country {
+    margin-inline: 0;
+  }
+}
