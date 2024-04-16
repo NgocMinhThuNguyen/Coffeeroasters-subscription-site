@@ -287,6 +287,46 @@ p, .ff-sans-2 { font-family: var(--ff-sans-2);}
   text-transform: uppercase;
 }
 
+.col-3 {
+  text-align: center;
+}
+
+.col-3 h1 {
+  margin-bottom: 2.8rem;
+}
+
+.numbered-items {
+  --gap: 3rem;
+  padding-inline-start: 0;
+  margin-bottom: 5rem;
+  counter-reset: count;
+}
+
+.numbered-items li {
+  counter-increment: count;
+  list-style-type: none;
+  position: relative;
+} 
+
+@media (min-width: 35rem) {
+  .col-3 {
+    text-align: left;
+  }
+
+  .numbered-items {
+    --gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+  }
+
+  .numbered-items li {
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 3;
+    padding-top: 2.8rem;
+  }
+}
+
 /* ------------------- */
 /* Layout              */
 /* ------------------- */
@@ -500,28 +540,8 @@ section {
 }
 
 /* how it work */
-.how-it-work {
-  text-align: center;
-}
 
-.how-it-work h1 {
-  margin-bottom: 2.8rem;
-}
-
-.numbered-items {
-  --gap: 3rem;
-  padding-inline-start: 0;
-  margin-bottom: 5rem;
-  counter-reset: count;
-}
-
-.numbered-items li {
-  counter-increment: count;
-  list-style-type: none;
-  position: relative;
-}
-
-.numbered-items li::before {
+.how-it-work .numbered-items li::before {
   content: "0" counter(count);
   font-family: var(--ff-sans-1);
   font-size: var(--fs-600);
@@ -541,17 +561,7 @@ section {
 }
 
 @media (min-width: 35rem) {
-  .how-it-work {
-    text-align: left;
-  }
-
-  .numbered-items {
-    --gap: 2rem;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto;
-  }
-
-  .numbered-items li:not(:last-child)::after {
+  .how-it-work .numbered-items li:not(:last-child)::after {
     content: "";
     position: absolute;
     width: 100%;
