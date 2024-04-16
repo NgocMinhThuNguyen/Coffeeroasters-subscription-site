@@ -363,6 +363,10 @@ p, .ff-sans-2, address { font-family: var(--ff-sans-2);}
   .banner {
     padding-inline-start: 5.18rem;
   }
+
+  .banner p {
+    padding-inline-end: 21.875rem;
+  }
 }
 
 /* ------------------- */
