@@ -12,13 +12,13 @@
   --clr-grey: 215 5% 54%;
 
   /* font-sizes */
-  --fs-100: .75rem;
-  --fs-200: 1rem;
-  --fs-300: 1.5rem;
-  --fs-400: 2rem;
-  --fs-500: 2.5rem;
-  --fs-600: 4.5rem;
-  --fs-700: 9.374rem;
+  --fs-normal: .75rem;
+  --fs-100: 1rem;
+  --fs-200: 1.75rem;
+  --fs-300: 2rem;
+  --fs-400: 2.5rem;
+  --fs-500: 3rem;
+  --fs-700: 4.5rem;
 
   /* font-families */
   --ff-sans-1: "Fraunces", sans-serif;
@@ -218,24 +218,35 @@ a {
 /* typhography */
 
 h1, h2, .ff-sans-1 { font-family: var(--ff-sans-1);}
-p, .ff-sans-2 { font-family: var(--ff-sans-2);}
+p, .ff-sans-2, address { font-family: var(--ff-sans-2);}
 
+.fs-normal { font-size: var(--fs-normal);}
 .fs-100 { font-size: var(--fs-100);}
-
 .fs-200 { font-size: var(--fs-200);}
-
 .fs-300 { font-size: var(--fs-300); }
-
 .fs-400 { font-size: var(--fs-400);}
-
 .fs-500 { font-size: var(--fs-500); }
-
 .fs-600 { font-size: var(--fs-600); }
-
 .fs-700 {
   font-size: var(--fs-700);
   text-transform: lowercase;
-}      
+}
+.fs-text { font-size: var(--fs-normal); }  
+.heading-primary { font-size: var(--fs-400);}
+.heading-secondary { font-size: var(--fs-200);}
+
+@media (min-width: 35rem) {
+  .heading-primary {
+    font-size: var(--fs-500);
+  }
+  .heading-secondary { font-size: var(--fs-300);}
+}
+
+@media (min-width: 50rem) {
+  .heading-primary { font-size: var(--fs-700);} 
+  .heading-secondary { font-size: var(--fs-400);}
+  .fs-text { font-size: var(--fs-100); }     
+}
 
 /* ------------------- */
 /* Components          */
@@ -543,7 +554,7 @@ section {
 .how-it-work .numbered-items li::before {
   content: "0" counter(count);
   font-family: var(--ff-sans-1);
-  font-size: var(--fs-600);
+  font-size: var(--fs-700);
   font-weight: 700;
   color: hsl(var(--clr-pale) );
 }
