@@ -390,7 +390,6 @@ p, .ff-sans-2, address { font-family: var(--ff-sans-2);}
 @media (max-width: 35rem) {
   .primary-nav {
     display: none;
-
     position: fixed;
     inset: 3.8rem 1rem 0 1rem;
     background: hsl(var(--clr-light-cream) / .9);
@@ -411,7 +410,7 @@ p, .ff-sans-2, address { font-family: var(--ff-sans-2);}
   .primary-nav a {
     font-family: var(--ff-sans-1);
     color: hsl( var(--clr-dark-grey-blue));
-    font-size: var(--fs-200);
+    font-size: 1.125rem;;
   }
 
   .mobile-nav-toggle {
