@@ -1,12 +1,23 @@
 const mobileToggle = document.querySelector(".mobile-nav-toggle");
 const primaryNav = document.querySelector(".primary-nav");
+const disclosureBtn = document.querySelector(".disclosure-btn");
+const disclosureContent = document.querySelector(".disclosure-content");
 
-mobileToggle.addEventListener("click", () => {
-  if(primaryNav.hasAttribute("data-visible")) {
-    mobileToggle.setAttribute("aria-expanded", false);
+function toggleDisplay(targetElement, isVisible) {
+  if (isVisible.hasAttribute("data-visible")) {
+    targetElement.setAttribute("aria-expanded", false);
   } else {
-    mobileToggle.setAttribute("aria-expanded", true);
+    targetElement.setAttribute("aria-expanded", true);
   }
 
-  primaryNav.toggleAttribute("data-visible");
+  isVisible.toggleAttribute("data-visible");
+}
+
+mobileToggle.addEventListener("click", () => {
+  toggleDisplay(mobileToggle, primaryNav);
+})
+
+disclosureBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  toggleDisplay(disclosureBtn, disclosureContent);
 })
