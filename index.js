@@ -1,7 +1,6 @@
 const mobileToggle = document.querySelector(".mobile-nav-toggle");
 const primaryNav = document.querySelector(".primary-nav");
-const disclosureBtn = document.querySelector(".disclosure-btn");
-const disclosureContent = document.querySelector(".disclosure-content");
+const disclosureBtns = document.querySelectorAll(".disclosure-btn");
 
 function toggleDisplay(targetElement, isVisible) {
   if (isVisible.hasAttribute("data-visible")) {
@@ -13,11 +12,16 @@ function toggleDisplay(targetElement, isVisible) {
   isVisible.toggleAttribute("data-visible");
 }
 
+// Mobile menu disclosure
 mobileToggle.addEventListener("click", () => {
   toggleDisplay(mobileToggle, primaryNav);
 })
 
-disclosureBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  toggleDisplay(disclosureBtn, disclosureContent);
+// Create plan disclosure
+disclosureBtns.forEach( (disclosureBtn) => {
+  disclosureBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    const disclosureContent = document.querySelector(`#${disclosureBtn.getAttribute("aria-control")}`);
+    toggleDisplay(disclosureBtn, disclosureContent);
+  })
 })
