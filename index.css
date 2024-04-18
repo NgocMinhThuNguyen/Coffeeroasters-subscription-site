@@ -614,7 +614,7 @@ footer {
 }
 
 .footer-logo {
-  fill: hsl(0 0 100%);
+  fill: hsl(0 0% 100%);
 }
 
 .footer-nav {

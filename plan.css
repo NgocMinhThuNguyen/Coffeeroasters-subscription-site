@@ -48,8 +48,24 @@
 
 /* plan */
 
+.plan {
+  --gap: 4rem;
+}
+
+.disclosure-wrapper {
+  --gap: 1rem;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.disclosure-wrapper legend {
+  width: 100%;
+}
+
 .disclosure-btn {
   --gap: 3rem;
+  width: 100%;
   font-family: var(--ff-sans-1);
   color: hsl(var(--clr-grey));
   text-align: left;
@@ -57,7 +73,7 @@
   font-weight: 600;
   padding-inline: 0;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 
   border: 0;
   background-color: transparent;
@@ -135,5 +151,6 @@
 
   .disclosure-content {
     grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
   }
 }
