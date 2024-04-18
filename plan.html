@@ -67,17 +67,18 @@
 
     <!-- create plan -->
     <section>
-      <form action="" class="plan">
-        <div class="disclosure-wrapper grid">
-          <button class="disclosure-btn flex" aria-control="preferences" aria-expanded="false">
-            How do you drink your coffee?
-            <img src="assets/plan/desktop/icon-arrow.svg" alt="" class="arrow">
-          </button>
+      <form action="" class="plan grid">
+        <fieldset class="disclosure-wrapper grid">
+          <legend>
+            <button class="disclosure-btn flex" aria-control="preferences" aria-expanded="false">
+              How do you drink your coffee?
+              <img src="assets/plan/desktop/icon-arrow.svg" alt="" class="arrow">
+            </button>
+          </legend>
 
           <div class="disclosure-content grid" id="preferences">
-            
             <div class="opts grid">
-              <input type="radio" name="preferences" id="capsule" class="radio-btn">
+              <input type="radio" name="preferences" id="capsule" value="capsule" class="radio-btn">
               <label for="capsule" class="grid">
                 <span class="ff-sans-1 opt-title">Capsule</span>
                 <span class="ff-sans-2 opt-description">Compatible with Nespresso systems and similar brewers</span>
@@ -85,7 +86,7 @@
             </div>
 
             <div class="opts grid">
-              <input type="radio" name="preferences" id="filter" class="radio-btn">
+              <input type="radio" name="preferences" id="filter" value="filter" class="radio-btn">
               <label for="filter" class="grid">
                 <span class="ff-sans-1 opt-title">Filter</span>
                 <span class="ff-sans-2 opt-description">For pour over or drip methods like Aeropress, Chemex, and V60</span>
@@ -93,14 +94,155 @@
             </div>
 
             <div class="opts grid">
-              <input type="radio" name="preferences" id="espresso" class="radio-btn">
-              <label for="filter" class="grid">
+              <input type="radio" name="preferences" id="espresso" value="espresso" class="radio-btn">
+              <label for="espresso" class="grid">
                 <span class="ff-sans-1 opt-title">Espresso</span>
                 <span class="ff-sans-2 opt-description">Dense and finely ground beans for an intense, flavorful experience</span>
               </label>
             </div>
           </div>
-        </div>
+        </fieldset>
+
+        <fieldset class="disclosure-wrapper grid">
+          <legend>
+            <button class="disclosure-btn flex" aria-control="bean-types" aria-expanded="false">
+              What type of coffee?
+              <img src="assets/plan/desktop/icon-arrow.svg" alt="" class="arrow">
+            </button>
+          </legend>
+
+          <div class="disclosure-content grid" id="bean-types">
+            <div class="opts grid">
+              <input type="radio" name="preferences" id="origin" value="single origin" class="radio-btn">
+              <label for="origin" class="grid">
+                <span class="ff-sans-1 opt-title">Single origin</span>
+                <span class="ff-sans-2 opt-description">Distinct, high quality coffee from a specific family-owned farm</span>
+              </label>
+            </div>
+
+            <div class="opts grid">
+              <input type="radio" name="preferences" id="decaf" value="deacf" class="radio-btn">
+              <label for="deacf" class="grid">
+                <span class="ff-sans-1 opt-title">Decaf</span>
+                <span class="ff-sans-2 opt-description">Just like regular coffee, except the caffeine has been removed</span>
+              </label>
+            </div>
+
+            <div class="opts grid">
+              <input type="radio" name="preferences" id="blended" value="blended" class="radio-btn">
+              <label for="blended" class="grid">
+                <span class="ff-sans-1 opt-title">Blended</span>
+                <span class="ff-sans-2 opt-description">Combination of two or three dark roasted beans of organic coffees finely ground beans for an intense, flavorful experience</span>
+              </label>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="disclosure-wrapper grid">
+          <legend>
+            <button class="disclosure-btn flex" aria-control="quantity" aria-expanded="false">
+              How much would you like?
+              <img src="assets/plan/desktop/icon-arrow.svg" alt="" class="arrow">
+            </button>
+          </legend>
+
+          <div class="disclosure-content grid" id="quantity">
+            <div class="opts grid">
+              <input type="radio" name="preferences" id="250" value="250" class="radio-btn">
+              <label for="250" class="grid">
+                <span class="ff-sans-1 opt-title">250g</span>
+                <span class="ff-sans-2 opt-description">Perfect for the solo drinker. Yields about 12 delicious cups.</span>
+              </label>
+            </div>
+
+            <div class="opts grid">
+              <input type="radio" name="preferences" id="500" value="500" class="radio-btn">
+              <label for="500" class="grid">
+                <span class="ff-sans-1 opt-title">500g</span>
+                <span class="ff-sans-2 opt-description">Perfect option for a couple. Yields about 40 delectable cups.</span>
+              </label>
+            </div>
+
+            <div class="opts grid">
+              <input type="radio" name="preferences" id="1000" value="1000" class="radio-btn">
+              <label for="1000" class="grid">
+                <span class="ff-sans-1 opt-title">1000g</span>
+                <span class="ff-sans-2 opt-description">Perfect for offices and events. Yields about 90 delightful cups.</span>
+              </label>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="disclosure-wrapper grid">
+          <legend>
+            <button class="disclosure-btn flex" aria-control="grind-opt" aria-expanded="false">
+              Want us to grind them?
+              <img src="assets/plan/desktop/icon-arrow.svg" alt="" class="arrow">
+            </button>
+          </legend>
+
+          <div class="disclosure-content grid" id="grind-opt">
+            <div class="opts grid">
+              <input type="radio" name="preferences" id="wholebean" value="wholebean" class="radio-btn">
+              <label for="wholebean" class="grid">
+                <span class="ff-sans-1 opt-title">Wholebean</span>
+                <span class="ff-sans-2 opt-description">Best choice if you cherish the full sensory experience</span>
+              </label>
+            </div>
+
+            <div class="opts grid">
+              <input type="radio" name="preferences" id="filter-opt" value="filter" class="radio-btn">
+              <label for="filter-opt" class="grid">
+                <span class="ff-sans-1 opt-title">Filter</span>
+                <span class="ff-sans-2 opt-description">For drip or pour-over coffee methods such as V60 or Aeropress</span>
+              </label>
+            </div>
+
+            <div class="opts grid">
+              <input type="radio" name="preferences" id="cafetiére" value="cafetiére" class="radio-btn">
+              <label for="cafetiére" class="grid">
+                <span class="ff-sans-1 opt-title">Cafetiére</span>
+                <span class="ff-sans-2 opt-description">Course ground beans specially suited for french press coffee</span>
+              </label>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="disclosure-wrapper grid">
+          <legend>
+            <button class="disclosure-btn flex" aria-control="delivery" aria-expanded="false">
+              How often should we deliver?
+              <img src="assets/plan/desktop/icon-arrow.svg" alt="" class="arrow">
+            </button>
+          </legend>
+
+          <div class="disclosure-content grid" id="delivery">
+            <div class="opts grid">
+              <input type="radio" name="preferences" id="every-week" value="every-week" class="radio-btn">
+              <label for="every-week" class="grid">
+                <span class="ff-sans-1 opt-title">Every week</span>
+                <span class="ff-sans-2 opt-description">$14.00 per shipment. Includes free first-class shipping.
+                </span>
+              </label>
+            </div>
+
+            <div class="opts grid">
+              <input type="radio" name="preferences" id="every-2-week" value="every-2-week" class="radio-btn">
+              <label for="every-2-week" class="grid">
+                <span class="ff-sans-1 opt-title">Every 2 weeks</span>
+                <span class="ff-sans-2 opt-description">$17.25 per shipment. Includes free priority shipping.</span>
+              </label>
+            </div>
+
+            <div class="opts grid">
+              <input type="radio" name="preferences" id="every-month" value="every-month" class="radio-btn">
+              <label for="every-month" class="grid">
+                <span class="ff-sans-1 opt-title">Every month</span>
+                <span class="ff-sans-2 opt-description">$22.50 per shipment. Includes free priority shipping.</span>
+              </label>
+            </div>
+          </div>
+        </fieldset>
       </form>
     </section>
   </main>
@@ -109,60 +251,7 @@
   03 Quantity
   04 Grind option
   05 Deliveries
-
   
-
-  Capsule
-  
-
-  
-  For pour over or drip methods like Aeropress, Chemex, and V60
-
-  
-  
-
-  What type of coffee?
-
-  Single origin
-  Distinct, high quality coffee from a specific family-owned farm
-
-  Decaf
-  Just like regular coffee, except the caffeine has been removed
-
-  Blended
-  Combination of two or three dark roasted beans of organic coffees
-
-  How much would you like?
-  250g
-  Perfect for the solo drinker. Yields about 12 delicious cups.
-  
-  500g
-  Perfect option for a couple. Yields about 40 delectable cups.
-
-  1000g
-  Perfect for offices and events. Yields about 90 delightful cups.
-
-  Want us to grind them?
-
-  Wholebean
-  Best choice if you cherish the full sensory experience
-
-  Filter
-  For drip or pour-over coffee methods such as V60 or Aeropress
-
-  Cafetiére
-  Course ground beans specially suited for french press coffee
-
-  How often should we deliver?
-
-  Every week
-  $14.00 per shipment. Includes free first-class shipping.
-
-  Every 2 weeks
-  $17.25 per shipment. Includes free priority shipping.
-
-  Every month
-  $22.50 per shipment. Includes free priority shipping.
 
   Order Summary
   “I drink coffee _____, with a _____ type of bean. _____ ground ala _____, 
