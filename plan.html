@@ -66,8 +66,18 @@
     </section>
 
     <!-- create plan -->
-    <section>
-      <form action="" class="plan grid">
+    <section class="plan-wrapper grid">
+      <ol class="plan-list ff-sans-1" id="plan-list">
+        <li><span class="numbered-items">01</span> Preferences</li>
+        <li><span class="numbered-items">02</span> Bean type</li>
+        <li><span class="numbered-items">03</span> Quantity</li>
+        <li><span class="numbered-items">04</span> Grind option</li>
+        <li><span class="numbered-items">05</span> Deliveries</li>
+      </ol>
+
+      <form action="" class="plan-form grid">
+
+        <!-- Plan - preferences -->
         <fieldset class="disclosure-wrapper grid">
           <legend>
             <button class="disclosure-btn flex" aria-control="preferences" aria-expanded="false">
@@ -78,24 +88,24 @@
 
           <div class="disclosure-content grid" id="preferences">
             <div class="opts grid">
-              <input type="radio" name="preferences" id="capsule" value="capsule" class="radio-btn">
-              <label for="capsule" class="grid">
+              <input type="radio" name="preferences" id="capsule" data-value="capsule" class="radio-btn">
+              <label for="capsule" class="flex">
                 <span class="ff-sans-1 opt-title">Capsule</span>
                 <span class="ff-sans-2 opt-description">Compatible with Nespresso systems and similar brewers</span>
               </label>
             </div>
 
             <div class="opts grid">
-              <input type="radio" name="preferences" id="filter" value="filter" class="radio-btn">
-              <label for="filter" class="grid">
+              <input type="radio" name="preferences" id="filter" data-value="filter" class="radio-btn">
+              <label for="filter" class="flex">
                 <span class="ff-sans-1 opt-title">Filter</span>
                 <span class="ff-sans-2 opt-description">For pour over or drip methods like Aeropress, Chemex, and V60</span>
               </label>
             </div>
 
             <div class="opts grid">
-              <input type="radio" name="preferences" id="espresso" value="espresso" class="radio-btn">
-              <label for="espresso" class="grid">
+              <input type="radio" name="preferences" id="espresso" data-value="espresso" class="radio-btn">
+              <label for="espresso" class="flex">
                 <span class="ff-sans-1 opt-title">Espresso</span>
                 <span class="ff-sans-2 opt-description">Dense and finely ground beans for an intense, flavorful experience</span>
               </label>
@@ -103,6 +113,7 @@
           </div>
         </fieldset>
 
+        <!-- Plan - bean type -->
         <fieldset class="disclosure-wrapper grid">
           <legend>
             <button class="disclosure-btn flex" aria-control="bean-types" aria-expanded="false">
@@ -113,24 +124,24 @@
 
           <div class="disclosure-content grid" id="bean-types">
             <div class="opts grid">
-              <input type="radio" name="preferences" id="origin" value="single origin" class="radio-btn">
-              <label for="origin" class="grid">
+              <input type="radio" name="bean-types" id="origin" data-value="single-origin" class="radio-btn">
+              <label for="origin" class="flex">
                 <span class="ff-sans-1 opt-title">Single origin</span>
                 <span class="ff-sans-2 opt-description">Distinct, high quality coffee from a specific family-owned farm</span>
               </label>
             </div>
 
             <div class="opts grid">
-              <input type="radio" name="preferences" id="decaf" value="deacf" class="radio-btn">
-              <label for="deacf" class="grid">
+              <input type="radio" name="bean-types" id="decaf" data-value="decaf" class="radio-btn">
+              <label for="deacf" class="flex">
                 <span class="ff-sans-1 opt-title">Decaf</span>
                 <span class="ff-sans-2 opt-description">Just like regular coffee, except the caffeine has been removed</span>
               </label>
             </div>
 
             <div class="opts grid">
-              <input type="radio" name="preferences" id="blended" value="blended" class="radio-btn">
-              <label for="blended" class="grid">
+              <input type="radio" name="bean-types" id="blended" data-value="blended" class="radio-btn">
+              <label for="blended" class="flex">
                 <span class="ff-sans-1 opt-title">Blended</span>
                 <span class="ff-sans-2 opt-description">Combination of two or three dark roasted beans of organic coffees finely ground beans for an intense, flavorful experience</span>
               </label>
@@ -138,6 +149,7 @@
           </div>
         </fieldset>
 
+        <!-- Plan - quanity -->
         <fieldset class="disclosure-wrapper grid">
           <legend>
             <button class="disclosure-btn flex" aria-control="quantity" aria-expanded="false">
@@ -148,24 +160,24 @@
 
           <div class="disclosure-content grid" id="quantity">
             <div class="opts grid">
-              <input type="radio" name="preferences" id="250" value="250" class="radio-btn">
-              <label for="250" class="grid">
+              <input type="radio" name="quantity" id="250" data-value="250" class="radio-btn">
+              <label for="250" class="flex">
                 <span class="ff-sans-1 opt-title">250g</span>
                 <span class="ff-sans-2 opt-description">Perfect for the solo drinker. Yields about 12 delicious cups.</span>
               </label>
             </div>
 
             <div class="opts grid">
-              <input type="radio" name="preferences" id="500" value="500" class="radio-btn">
-              <label for="500" class="grid">
+              <input type="radio" name="quantity" id="500" data-value="500" class="radio-btn">
+              <label for="500" class="flex">
                 <span class="ff-sans-1 opt-title">500g</span>
                 <span class="ff-sans-2 opt-description">Perfect option for a couple. Yields about 40 delectable cups.</span>
               </label>
             </div>
 
             <div class="opts grid">
-              <input type="radio" name="preferences" id="1000" value="1000" class="radio-btn">
-              <label for="1000" class="grid">
+              <input type="radio" name="quantity" id="1000" data-value="1000" class="radio-btn">
+              <label for="1000" class="flex">
                 <span class="ff-sans-1 opt-title">1000g</span>
                 <span class="ff-sans-2 opt-description">Perfect for offices and events. Yields about 90 delightful cups.</span>
               </label>
@@ -173,6 +185,7 @@
           </div>
         </fieldset>
 
+        <!-- Plan - grind option -->
         <fieldset class="disclosure-wrapper grid">
           <legend>
             <button class="disclosure-btn flex" aria-control="grind-opt" aria-expanded="false">
@@ -183,24 +196,24 @@
 
           <div class="disclosure-content grid" id="grind-opt">
             <div class="opts grid">
-              <input type="radio" name="preferences" id="wholebean" value="wholebean" class="radio-btn">
-              <label for="wholebean" class="grid">
+              <input type="radio" name="grind-opt" id="wholebean" data-value="wholebean" class="radio-btn">
+              <label for="wholebean" class="flex">
                 <span class="ff-sans-1 opt-title">Wholebean</span>
                 <span class="ff-sans-2 opt-description">Best choice if you cherish the full sensory experience</span>
               </label>
             </div>
 
             <div class="opts grid">
-              <input type="radio" name="preferences" id="filter-opt" value="filter" class="radio-btn">
-              <label for="filter-opt" class="grid">
+              <input type="radio" name="grind-opt" id="filter-opt" data-value="filter" class="radio-btn">
+              <label for="filter-opt" class="flex">
                 <span class="ff-sans-1 opt-title">Filter</span>
                 <span class="ff-sans-2 opt-description">For drip or pour-over coffee methods such as V60 or Aeropress</span>
               </label>
             </div>
 
             <div class="opts grid">
-              <input type="radio" name="preferences" id="cafetiére" value="cafetiére" class="radio-btn">
-              <label for="cafetiére" class="grid">
+              <input type="radio" name="grind-opt" id="cafetiére" data-value="cafetiére" class="radio-btn">
+              <label for="cafetiére" class="flex">
                 <span class="ff-sans-1 opt-title">Cafetiére</span>
                 <span class="ff-sans-2 opt-description">Course ground beans specially suited for french press coffee</span>
               </label>
@@ -208,6 +221,7 @@
           </div>
         </fieldset>
 
+        <!-- Plan - delivery -->
         <fieldset class="disclosure-wrapper grid">
           <legend>
             <button class="disclosure-btn flex" aria-control="delivery" aria-expanded="false">
@@ -218,64 +232,58 @@
 
           <div class="disclosure-content grid" id="delivery">
             <div class="opts grid">
-              <input type="radio" name="preferences" id="every-week" value="every-week" class="radio-btn">
-              <label for="every-week" class="grid">
+              <input type="radio" name="delivery" id="every-week" data-value="every-week" class="radio-btn">
+              <label for="every-week" class="flex">
                 <span class="ff-sans-1 opt-title">Every week</span>
-                <span class="ff-sans-2 opt-description">$14.00 per shipment. Includes free first-class shipping.
+                <span class="ff-sans-2 opt-description">$<span class="shipment-price">14.00</span> per shipment. Includes free first-class shipping.
                 </span>
               </label>
             </div>
 
             <div class="opts grid">
-              <input type="radio" name="preferences" id="every-2-week" value="every-2-week" class="radio-btn">
-              <label for="every-2-week" class="grid">
+              <input type="radio" name="delivery" id="every-2-week" data-value="every-2-week" class="radio-btn">
+              <label for="every-2-week" class="flex">
                 <span class="ff-sans-1 opt-title">Every 2 weeks</span>
-                <span class="ff-sans-2 opt-description">$17.25 per shipment. Includes free priority shipping.</span>
+                <span class="ff-sans-2 opt-description">$<span class="shipment-price">17.25</span> per shipment. Includes free priority shipping.</span>
               </label>
             </div>
 
             <div class="opts grid">
-              <input type="radio" name="preferences" id="every-month" value="every-month" class="radio-btn">
-              <label for="every-month" class="grid">
+              <input type="radio" name="delivery" id="every-month" data-value="every-month" class="radio-btn">
+              <label for="every-month" class="flex">
                 <span class="ff-sans-1 opt-title">Every month</span>
-                <span class="ff-sans-2 opt-description">$22.50 per shipment. Includes free priority shipping.</span>
+                <span class="ff-sans-2 opt-description">$<span class="shipment-price">22.50</span> per shipment. Includes free priority shipping.</span>
               </label>
             </div>
           </div>
         </fieldset>
+
+        <!-- Order summary -->
+        <div class="summary-wrapper">
+          <h1 class="ff-sans-2 fs-100 text-light">Order Summary</h1>
+          <p class="ff-sans-1 text-light">
+            “I drink coffee  <span class="text-dark-cyan" data-name="preferences">_____</span>, with a  <span class="text-dark-cyan" data-name="bean-types">_____</span> type of bean. <span class="text-dark-cyan" data-name="quantity">_____</span>  ground ala  <span class="text-dark-cyan" data-name="grind-opt">_____</span>, sent to me  <span class="text-dark-cyan" data-name="delivery">_____</span>.”
+          </p>
+        </div>
+
+        <button class="btn" type="submit">Create my plan!</button>
       </form>
+
+      <!-- Modal -->
+      <dialog class="modal" id="modal">
+        <h1 class="ff-sans-1 text-light bg-dark-grey">Order Summary</h1>
+        <p class="ff-sans-1 text-light">
+          “I drink coffee  <span class="text-dark-cyan" data-name="preferences">_____</span>, with a  <span class="text-dark-cyan" data-name="bean-types">_____</span> type of bean. <span class="text-dark-cyan" data-name="quantity">_____</span>  ground ala  <span class="text-dark-cyan" data-name="grind-opt">_____</span>, sent to me  <span class="text-dark-cyan" data-name="delivery">_____</span>.”
+        </p>
+        <p class="ff-sans-2 text-dark-grey">
+          Is this correct? You can proceed to checkout or go back to plan selection if something 
+          is off. Subscription discount codes can also be redeemed at the checkout.
+        </p>
+
+        <button class="btn">Check out $<span class="final-cost"></span>/month</button>
+      </dialog>
     </section>
   </main>
-  01 Preferences
-  02 Bean type
-  03 Quantity
-  04 Grind option
-  05 Deliveries
-  
-
-  Order Summary
-  “I drink coffee _____, with a _____ type of bean. _____ ground ala _____, 
-  sent to me _____.”
-
-  Create my plan!
-
-  <!-- Modal -->
-  Order Summary
-
-  “I drink coffee _____, with a _____ type of bean. _____ ground ala _____,
-  sent to me _____.”
-
-  Is this correct? You can proceed to checkout or go back to plan selection if something 
-  is off. Subscription discount codes can also be redeemed at the checkout.
-
-  $_____/month
-
-  Checkout
-  <!-- End modal -->
-
-  Home
-  About us
-  Create your plan
 </body>
 
 </html>
