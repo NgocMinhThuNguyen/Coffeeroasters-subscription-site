@@ -159,7 +159,7 @@ a {
   text-align: center;
 }
 
-@media (min-width: 50rem) {
+@media (min-width: 60rem) {
   .wrapper {
     padding-inline: 5.125rem;
   }
@@ -183,7 +183,7 @@ a {
   }
 }
 
-@media (min-width: 50rem) {
+@media (min-width: 60rem) {
   .item {
     text-align: center;
     grid-column: span 1;
@@ -359,7 +359,7 @@ p, .ff-sans-2, address { font-family: var(--ff-sans-2);}
   }
 }
 
-@media (min-width: 50rem) {
+@media (min-width: 60rem) {
   .banner {
     padding-inline-start: 5.18rem;
   }
@@ -450,7 +450,7 @@ section {
   }
 }
 
-@media (min-width: 50rem) {
+@media (min-width: 60rem) {
   .intro-wrapper {
     background-image: url("assets/home/desktop/image-hero-coffeepress.jpg");
   }
@@ -482,7 +482,7 @@ section {
   }
 }
 
-@media (min-width: 50rem) {
+@media (min-width: 60rem) {
   .collections {
     text-align: center;
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -545,7 +545,7 @@ section {
   }
 }
 
-@media (min-width: 50rem) {
+@media (min-width: 60rem) {
   .why-us-content {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     grid-template-rows: auto;
@@ -644,7 +644,7 @@ footer {
   }
 }
 
-@media (min-width: 50rem) {
+@media (min-width: 60rem) {
   footer {
     padding-inline: 5rem;
     grid-template-columns: repeat(3, 1fr);
