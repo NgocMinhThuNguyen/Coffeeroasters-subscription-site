@@ -3,6 +3,9 @@ const primaryNav = document.querySelector(".primary-nav");
 const disclosureBtns = document.querySelectorAll(".disclosure-btn");
 const options = document.querySelectorAll("[type=radio]");
 const grindOptText = document.querySelector("[data-name=grind-opt]");
+const planForm = document.querySelector(".plan-form");
+const modal = document.querySelector("#modal");
+const submitBtn = document.querySelector("[type=submit]");
 
 const orderSummary = {
   "preferences": "",
@@ -11,6 +14,7 @@ const orderSummary = {
   "grind-opt": "",
   "delivery": "",
   "shipping-price": "",
+  "total-cost": "",
 }
 
 function toggleDisplay(targetElement, isVisible) {
@@ -65,28 +69,66 @@ function updateShippingPrice(number) {
   }
 
   const frequencies = document.querySelectorAll("[name=delivery] + label");
+
   frequencies.forEach( frequency => {
     const shipPrice = frequency.querySelector(".shipment-price");
     shipPrice.textContent = `${shippingPrices[number][frequency.getAttribute("for")]}`;
   });
+
   orderSummary["shipping-price"] = shippingPrices[number][orderSummary["delivery"]];
+  if (orderSummary["delivery"] === "every-week") {
+    orderSummary["total-cost"] = (parseFloat(orderSummary["shipping-price"])*4);;
+  } else if (orderSummary["delivery"] === "every-2-week") {
+    orderSummary["total-cost"] = (parseFloat(orderSummary["shipping-price"])*2);
+  } else if (orderSummary["delivery"] === "every-month") {
+    orderSummary["total-cost"] = parseFloat(orderSummary["shipping-price"]);
+  }
 }
 
 function displayOrder(optionName, orderSummary) {
-  const blank = document.querySelector(`[data-name=${optionName}]`);
-  const grindOptBlank = document.querySelector("[data-name=grind-opt");
+  const blanks = document.querySelectorAll(`[data-name=${optionName}]`);
+  const grindOptBlanks = document.querySelectorAll("[data-name=grind-opt");
   
   if (orderSummary["preferences"] === "capsule") {
-    grindOptBlank.classList.add("hidden");
+    grindOptBlanks.forEach ( grindOptBlank => {
+      grindOptBlank.classList.add("hidden");
+      grindOptBlank.textContent = "";
+    })
+    
   } else {
-    grindOptBlank.classList.remove("hidden");
+    grindOptBlanks.forEach ( grindOptBlank => {
+      grindOptBlank.classList.remove("hidden");
+      grindOptBlank.textContent = "_____";
+    })
   }
 
   if (optionName === "quantity") {
-    blank.innerHTML = `${orderSummary[optionName]}g`;
+    blanks.forEach(blank => {
+      blank.textContent = `${orderSummary[optionName]}g`;
+    })
+    
   } else {
-    blank.innerHTML = `${orderSummary[optionName].replace(/-/g, " ")}`;
+    blanks.forEach(blank => {
+      blank.textContent = `${orderSummary[optionName].replace(/-/g, " ")}`;
+    })
   } 
+}
+
+function enableSubmitBtn(submitBtn) {
+  blanks = document.querySelectorAll(".summary-wrapper [data-name]");
+  let isBlank = true;
+
+  blanks.forEach(blank => {
+    if (blank.textContent === "_____") {
+      isBlank = false;
+    }
+  })
+
+  if (isBlank) {
+    submitBtn.removeAttribute("disabled", null);
+  } else {
+    submitBtn.setAttribute("disabled", null);
+  }
 }
 
 // Mobile menu disclosure
@@ -110,5 +152,11 @@ options.forEach( (option) => {
     orderSummary[optionName] = option.dataset.value;
     checkOrder(orderSummary);
     displayOrder(optionName, orderSummary);
+    enableSubmitBtn(submitBtn);
   })
+})
+
+planForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  modal.showModal();
 })
