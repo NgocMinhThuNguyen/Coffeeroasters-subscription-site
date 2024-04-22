@@ -268,3 +268,29 @@
 .modal-content .btn {
   border: 0;
 }
+
+.check-out {
+  display: none;
+}
+
+@media (min-width: 35rem) {
+  .modal {
+    max-width: 60ch;
+  }
+
+  .mobile {
+    display: none;
+  }
+
+  .check-out {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .check-out p {
+    align-self: center;
+    font-weight: 600;
+    text-align: center;
+  }
+}
