@@ -261,26 +261,28 @@
         <!-- Order summary -->
         <div class="summary-wrapper">
           <h1 class="ff-sans-2 fs-100 text-light">Order Summary</h1>
-          <p class="ff-sans-1 text-light">
+          <p class="summary-text ff-sans-1 text-light">
             “I drink coffee  <span class="text-dark-cyan" data-name="preferences">_____</span>, with a  <span class="text-dark-cyan" data-name="bean-types">_____</span> type of bean. <span class="text-dark-cyan" data-name="quantity">_____</span>  ground ala  <span class="text-dark-cyan" data-name="grind-opt">_____</span>, sent to me  <span class="text-dark-cyan" data-name="delivery">_____</span>.”
           </p>
         </div>
 
-        <button class="btn" type="submit">Create my plan!</button>
+        <button class="btn" type="submit" aria-control="modal" disabled>Create my plan!</button>
       </form>
 
       <!-- Modal -->
       <dialog class="modal" id="modal">
-        <h1 class="ff-sans-1 text-light bg-dark-grey">Order Summary</h1>
-        <p class="ff-sans-1 text-light">
-          “I drink coffee  <span class="text-dark-cyan" data-name="preferences">_____</span>, with a  <span class="text-dark-cyan" data-name="bean-types">_____</span> type of bean. <span class="text-dark-cyan" data-name="quantity">_____</span>  ground ala  <span class="text-dark-cyan" data-name="grind-opt">_____</span>, sent to me  <span class="text-dark-cyan" data-name="delivery">_____</span>.”
-        </p>
-        <p class="ff-sans-2 text-dark-grey">
-          Is this correct? You can proceed to checkout or go back to plan selection if something 
-          is off. Subscription discount codes can also be redeemed at the checkout.
-        </p>
-
-        <button class="btn">Check out $<span class="final-cost"></span>/month</button>
+        <h1 class="modal-heading ff-sans-1 text-light bg-dark-grey">Order Summary</h1>
+        <div class="modal-content grid">
+          <p class="summary-text ff-sans-1 text-grey">
+            “I drink coffee  <span class="text-dark-cyan" data-name="preferences">_____</span>, with a  <span class="text-dark-cyan" data-name="bean-types">_____</span> type of bean. <span class="text-dark-cyan" data-name="quantity">_____</span>  ground ala  <span class="text-dark-cyan" data-name="grind-opt">_____</span>, sent to me  <span class="text-dark-cyan" data-name="delivery">_____</span>.”
+          </p>
+          <p class="ff-sans-2 fs-text text-dark-grey">
+            Is this correct? You can proceed to checkout or go back to plan selection if something 
+            is off. Subscription discount codes can also be redeemed at the checkout.
+          </p>
+  
+          <button class="btn">Check out $<span data-name="shipping-cost"></span>/month</button>
+        </div>
       </dialog>
     </section>
   </main>
