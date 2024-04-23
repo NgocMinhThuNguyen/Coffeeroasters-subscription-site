@@ -365,7 +365,7 @@ p, .ff-sans-2, address { font-family: var(--ff-sans-2);}
   }
 
   .banner p {
-    padding-inline-end: 21.875rem;
+    padding-inline-end: 10rem;
   }
 }
 
