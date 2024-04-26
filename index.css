@@ -450,6 +450,10 @@ section {
   --gap: 3rem;
 }
 
+.collections-heading {
+  position: relative;
+}
+
 .collections img {
   max-width: 80%;
 }
