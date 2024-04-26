@@ -103,7 +103,9 @@ function displayOrder(optionName, orderSummary) {
     } else {
       grindOptBlanks.forEach ( grindOptBlank => {
         grindOptBlank.classList.remove("hidden");
-        grindOptBlank.textContent = "_____";
+        if (orderSummary["grind-opt"] === "") {
+          grindOptBlank.textContent = "_____";
+        }
       })
     }
     blanks.forEach(blank => {
