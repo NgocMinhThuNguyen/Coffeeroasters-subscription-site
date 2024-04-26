@@ -118,7 +118,7 @@ body {
   background-color: hsl(var(--clr-light-cream));
 }
 
-@media (min-width: 50rem) {
+@media (min-width: 60rem) {
   body {
     padding-inline: 5rem; 
   }
@@ -167,7 +167,6 @@ a {
   .item {
     --gap: 3.125rem;
     text-align: left;
-    grid-template-columns: 5rem 1fr;
     align-items: center;
   }
 }
@@ -177,7 +176,6 @@ a {
     --gap: 1rem;
     text-align: center;
     grid-column: span 1;
-    grid-template-columns: 1fr;
     grid-template-rows: 10rem 1fr;
     place-content: center;
   }
@@ -339,7 +337,6 @@ p, .ff-sans-2, address { font-family: var(--ff-sans-2);}
     text-align: left;
     justify-items: start;
     grid-template-columns: 2fr 1fr;
-    
   }
 
   .banner > * {
@@ -448,10 +445,20 @@ section {
 
 .collections {
   --gap: 3rem;
+  position: relative;
 }
 
 .collections-heading {
-  position: relative;
+  font-size: clamp(2.5rem, 7.512vw + 0.739rem, 7.5rem);
+  font-weight: 700;
+  background-color: hsl(var(--clr-dark-grey-blue));
+  background-image: linear-gradient(
+    hsl(var(--clr-dark-grey-blue)) 20%,
+    hsl(var(--clr-light-cream)) 80%
+  );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: .3;
 }
 
 .collections img {
@@ -467,6 +474,17 @@ section {
 }
 
 @media (min-width: 35rem) {
+  .collections-heading {
+    position: relative;
+    z-index: -1;
+    top: 20%;
+    letter-spacing: .3rem;
+  }
+
+  .collections .item {
+    grid-template-columns: 1fr 2fr;
+  }
+
   .collections p {
     padding-inline-start: 0;
   }
@@ -477,6 +495,17 @@ section {
     text-align: center;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     padding-inline: 3.875rem;
+  }
+
+  .collections-heading {
+    grid-column: 1/-1;
+    grid-row: span 1;
+    top: 60%;
+  }
+
+  .collections .item {
+    grid-row: 2/3;
+    grid-template-columns: 1fr;
   }
 
   .collections p {
@@ -526,6 +555,12 @@ section {
   border-radius: 6px;
 }
 
+@media (min-width: 35rem) {
+  .why-us-content .item {
+    grid-template-columns: 5rem 1fr;
+  }
+}
+
 @media (min-width: 60rem) {
   .why-us h1 {
     margin-top: 2.5rem;
@@ -538,6 +573,10 @@ section {
   .why-us-content {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     grid-template-rows: auto;
+  }
+
+  .why-us-content .item {
+    grid-template-columns: 1fr;
   }
 }
 
