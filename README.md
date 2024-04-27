@@ -1,124 +1,149 @@
-# Frontend Mentor - Coffeeroasters subscription site
+# Frontend Mentor - Coffeeroasters subscription site solution
 
-![Design preview for the Coffeeroasters subscription site coding challenge](./preview.jpg)
+This is a solution to the [Coffeeroasters subscription site challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/coffeeroasters-subscription-site-5Fc26HVY6). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
-## Welcome! 👋
+## Table of contents
 
-Thanks for purchasing this premium Frontend Mentor coding challenge.
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects. These premium challenges are perfect portfolio pieces, so please feel free to use what you create in your portfolio to show others.
+## Overview
 
-**To do this challenge, you need a good understanding of HTML, CSS, and JavaScript.**
+### The challenge
 
-## The challenge
-
-Your challenge is to build out this multi-page coffee subscription website and get it looking as close to the design as possible.
-
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
-
-Your users should be able to:
+Users should be able to:
 
 - View the optimal layout for each page depending on their device's screen size
 - See hover states for all interactive elements throughout the site
-- Make selections to create a coffee subscription and see an order summary modal of their choices (details provided below)
+- Make selections to create a coffee subscription and see an order summary modal of their choices
 
-### Expected bahaviour
+### Screenshot
 
-The interactive subscription page has a number of specific behaviours, which are listed below:
+![](preview.jpg)
 
-- If "Capsule" is selected for the first option
-  - The "Want us to grind them?" section should be disabled and not able to be opened
-- Order summary texts updates
-  - If "Capsule" is selected, update the order summary text to:
-    - "I drink my coffee **using** Capsules"
-    - Remove the grind selection text
-  - If "Filter" or "Espresso" are selected, update the order summary text to:
-    - "I drink my coffee **as** Filter||Espresso"
-    - Keep/Add the grind selection text
-  - For all other selections, add the selection title in the blank space where appropriate
-- Updating per shipment price (shown in "How often should we deliver?" section at the bottom) based on weight selected
-  - If 250g weight is selected
-    - Every Week price per shipment is $7.20
-    - Every 2 Weeks price per shipment is $9.60
-    - Every Month price per shipment is $12.00
-  - If 500g weight is selected
-    - Every Week price per shipment is $13.00
-    - Every 2 Weeks price per shipment is $17.50
-    - Every Month price per shipment is $22.00
-  - If 1000g weight is selected
-    - Every Week price per shipment is $22.00
-    - Every 2 Weeks price per shipment is $32.00
-    - Every Month price per shipment is $42.00
-- Calculating per month cost for the Order Summary modal
-  - If Every Week is selected, the Order Summary modal should show the per shipment price multiplied by 4. For example, if 250g weight is selected, the price would be $28.80/month
-  - If Every 2 Weeks is selected, the Order Summary modal should show the per shipment price multiplied by 2. For example, if 250g weight is selected, the price would be $19.20/month
-  - If Every Month is selected, the Order Summary modal should show the per shipment price multiplied by 1. For example, if 250g weight is selected, the price would be $12.00/month
+### Links
 
-The designs show these differences, so you can refer to them to get an idea of what's needed for the different states.
+- Solution URL: [GitHub](https://github.com/NgocMinhThuNguyen/Coffeeroasters-subscription-site)
+- Live Site URL: [Live](https://your-live-site-url.com)
 
-Want some support on the challenge? [Join our community](https://www.frontendmentor.io/community) and ask questions in the **#help** channel.
+## My process
 
-## Where to find everything
+### Built with
 
-Your task is to build out the project to the design file provided. We provide both Sketch and Figma versions of the design, so you can choose which tool you prefer to use. You can download the design file on the platform. **Please be sure not to share them with anyone else.** The design download comes with a `README.md` file as well to help you get set up.
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- CSS Grid
+- Mobile-first workflow
+- Javascript
 
-All the required assets for this project are in the `/assets` folder. The assets are already exported for the correct screen size and optimized. Some images are reusable at multiple screen sizes. So if you don't see an image in a specific folder, it will typically be in another folder for that page.
+### What I learned
+- Modal: There is an HTML tag called `dialog` to create a modal which has all the properties of modal, I do not need to use complex CSS to create modal. 
+  ```html
+  <button class="open-modal">Open modal</button>
+  <dialog>
+    <h1>Order Summary<h1>
+    <p>"I drink coffee Filter, with a Decaf type of bean. 1000g ground ala Wholebean, sent to me every week</p>
+    <button>Check out</button>
+  </dialog>
+  ```
+  By default, the modal will be hidden, to open it, using JS, listening for a click event on the open button like this:
+  ```js
+  cont openModalBtn = document.querySelector(".open-modal");
+  const modal = document.quetySelector("dialog");
+  openModalBtn.addEventListener("click", () => {
+    modal.showModal();
+  })
+  ```
+  To close the modal, using `modal.close()`
 
-The design system in the design file will give you more information about the various colors, fonts, and styles used in this project.
+  I can also change the background when the open is opened using the `backdrop` pseudo class, however, it is still not widely supported on browsers
 
-## Building your project
+  ```css
+  dialog::backdrop {
+    background-color: hsl( var(--clr-grey) / .5);
+  }
+  ```
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+- For this project, I tried to create CSS utilities and components and I realized that it saved a lot of time and codes for a big project like this.
 
-1. Separate the `starter-code` from the rest of this project and rename it to something meaningful for you. Initialize the codebase as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/). **⚠️ IMPORTANT ⚠️: There are already a couple of `.gitignore` files in this project. Please do not remove them or change the content of the files. If you create a brand new project, please use the `.gitignore` files provided in your new codebase. This is to avoid the accidental upload of the design files to GitHub. With these premium challenges, please be sure not to share the design files in your GitHub repo. Thanks!**
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+- Mobile menu: to create the moblie navigation:
+  - I first create the navigation for tablet/desktop
+  - Create the menu button to toggle the navigation, hide the text using `.sr-only` class. The button should have `aria-controls` and `aria-expanded`
+    - Use the media queries `@media (max-width: 35rem)` for the mobile nav to reduce duplicated codes
+    - `.sr-only`: The menu button is normally visualized using icon like hamburger icon, the screen reader will not know what it is, therefore there should be a text to describe that menu button and hide it using this class
+    - `aria-controls`: identify the element/elements control the menu button, here is the `nav`
+    - `aria-expanded`: let screen readers know whether to menu is open or not. By default, it is set to false `aria-expanded="false"`, when it menu is open, set it to true
 
-## Deploying your project
+```html
+  <button class="mobile-nav-toggle" aria-controls="primary-nav">
+    <span class="sr-only" aria-expanded="false">Menu</span>
+  </button>
 
-As mentioned above, there are many ways to host your project for free. Our recommended hosts are:
+  <nav class="primary-nav" id="primary-nav">
+    <ul class="nav flex">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="plan.html">Create Your Plan</a></li>
+    </ul>
+  </nav>
+```
 
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
+```css
+.sr-only {
+  display: none;
+  position: absolute; 
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px; 
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; /* added line */
+  border: 0;
+}
+```
 
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://medium.com/frontend-mentor/frontend-mentor-trusted-hosting-providers-bf000dfebe).
+- Add gradient overlay to text: this is an interesting thing I learned during this project, to make it, I need to use three css properties:
+  - `background-image`: using linear gradient to create the wished colors
+  - `background-clip:text`: render the background where it is text
+  - `-webkit-text-fill-color: transparent`: hide the text color to make the gradient background visible
 
-## Create a custom `README.md`
+- Overlapping content: instead of using absolute and relative positions to position the content when I want it to be overlapping, I found it is better to use `subgrid` in this project, however, because `subgrid` is still not supported in some browsers, I used `grid` and pseudo-class. The idea is to use `grid` to create the numbers of columns/rows I want, then use the pseudo before or after to add an extra style like this:
 
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
+```css
+  .quality-wrapper::before {
+  content: "";
+  grid-column: 1/-1;
+  grid-row: 2/-1;
+  background-image: url("assets/about/mobile/bg-quality.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 6px;
+}
+```
 
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
+- `object-fit`: this property is to make the image scale responsively, however, to use it, I should have the width and height. If not, it does not seem to work.
 
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
+### Continued development
 
-## Submitting your solution
+- Add animation for a better user experience
+- Store user order to the database
 
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://medium.com/frontend-mentor/a-complete-guide-to-submitting-solutions-on-frontend-mentor-ac6384162248) for tips on how to do this.
+### Useful resources
 
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
+- [How to add a gradient overlay to text with CSS](https://fossheim.io/writing/posts/css-text-gradient/)
+- [Tutorial: Let's Build an Accessible Disclosure](https://fedmentor.dev/posts/disclosure-ui/)
 
-**⚠️ IMPORTANT ⚠️: With these premium challenges, please be sure not to upload the design files to GitHub when you're submitting to the platform and sharing it around. If you've created a brand new project, the easiest way to do that is to copy across the `.gitignore` provided in this starter project.**
+## Author
 
-## Sharing your solution
-
-There are multiple places you can share your solution:
-
-1. Share your solution page in the **#finished-projects** channel of the [community](https://www.frontendmentor.io/community). 
-2. Tweet [@frontendmentor](https://twitter.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in the tweet. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on other social channels like LinkedIn.
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
-
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback. 
-
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
-
-## Got feedback for us?
-
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
-
-**Have fun building!** 🚀
-
+- Website - [Thu Nguyen](https://github.com/NgocMinhThuNguyen)
+- Frontend Mentor - [@NgocMinhThuNguyen](https://www.frontendmentor.io/profile/NgocMinhThuNguyen)
