@@ -140,6 +140,10 @@ function enableSubmitBtn(submitBtn) {
 
   if (isBlank) {
     submitBtn.removeAttribute("disabled", null);
+    planForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      modal.showModal();
+    })
   } else {
     submitBtn.setAttribute("disabled", null);
   }
@@ -170,13 +174,10 @@ options.forEach( (option) => {
   })
 })
 
-planForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-  modal.showModal();
-})
-
+// Close modal
 closeModalBtns.forEach( closeModalBtn => {
   closeModalBtn.addEventListener("click", () => {
     modal.close();
   })
 })
+
